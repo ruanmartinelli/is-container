@@ -1,0 +1,29 @@
+{
+  "name": "is-container",
+  "version": "1.0.0",
+  "description": "Validates a container number according to ISO 6346",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruanmartinelli/is-container.git"
+  },
+  "keywords": [
+    "container",
+    "number",
+    "valid",
+    "check"
+  ],
+  "author": {
+    "name": "Ruan Martinelli",
+    "email": "martinelliruan@gmail.com",
+    "url": "https://github.com/ruanmartinelli"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruanmartinelli/is-container/issues"
+  },
+  "homepage": "https://github.com/ruanmartinelli/is-container#readme"
+}
