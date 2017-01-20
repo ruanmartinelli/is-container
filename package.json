@@ -19,11 +19,14 @@
   "author": {
     "name": "Ruan Martinelli",
     "email": "martinelliruan@gmail.com",
-    "url": "https://github.com/ruanmartinelli"
+    "url": "ruanmartinelli.com"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ruanmartinelli/is-container/issues"
   },
-  "homepage": "https://github.com/ruanmartinelli/is-container#readme"
+  "homepage": "https://github.com/ruanmartinelli/is-container#readme",
+  "devDependencies": {
+    "ava": "^0.17.0"
+  }
 }

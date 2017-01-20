@@ -1,11 +1,18 @@
-const m = require('./index')
+const m = require('./')
+const test = require('ava')
 
-console.log('[1] should be true:  ',m('MSKU6011672'))
-console.log('[2] should be true:  ',m('MSKU 6011672'))
-console.log('[3] should be true:  ',m('msku 6011672'))
-console.log('[4] should be false: ',m('6011672msku'))
-console.log('[6] should be false: ',m('INXU6011677'))
-console.log('[7] should be false: ',m('00000000000'))
-console.log('[8] should be false: ',m(''))
-console.log('[9] should be false: ',m('undefined'))
-console.log('[10] should be false:',m('null'))
+test('work for MSKU6011672', t => t.deepEqual (m('MSKU6011672'), true ))
+
+test('work for container numbers with spaces', t => t.deepEqual (m('MS  KU   601 1672'), true ))
+
+test('work for container numbers with lowercase letters', t => t.deepEqual (m('msku6011672'), true ))
+
+test('return false if position of letters and numbers are switched', t => t.deepEqual (m('6011672msku'), false ))
+
+test('return false for invalid container numbers (INXU6011677)', t => t.deepEqual (m('INXU6011677'), false ))
+
+test('return false if everything is zero', t => t.deepEqual (m('00000000000'), false ))
+
+test('return false for empty strings', t => t.deepEqual (m(''), false ))
+
+test('return false if no container number is given', t => t.deepEqual (m(), false ))
