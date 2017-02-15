@@ -1,4 +1,6 @@
-# is-container [![Build Status](https://travis-ci.org/ruanmartinelli/is-container.svg?branch=master)](https://travis-ci.org/ruanmartinelli/is-container) [![NPM downloads](https://img.shields.io/npm/dm/is-container.svg?style=flat)](https://npmjs.com/package/is-container)
+# is-container 
+
+[![Build Status](https://travis-ci.org/ruanmartinelli/is-container.svg?branch=master)](https://travis-ci.org/ruanmartinelli/is-container) [![NPM downloads](https://img.shields.io/npm/dm/is-container.svg?style=flat)](https://npmjs.com/package/is-container)
 
 >Validates a container number according to [ISO 6346](https://en.wikipedia.org/wiki/ISO_6346)
 
