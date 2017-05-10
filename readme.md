@@ -6,6 +6,12 @@
 
 ## Install
 
+#### yarn
+```
+$ yarn add is-container
+```
+
+#### npm
 ```
 $ npm install --save is-container
 ```
