@@ -10,7 +10,6 @@ module.exports = (code) => {
 
 
     code = code.toUpperCase()
-    code = code.replace(/\s/g, '')
 
     const undef = !code
     const empty = code === ""

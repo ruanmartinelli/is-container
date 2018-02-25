@@ -3,9 +3,9 @@ const test = require('ava')
 
 test('work for MSKU6011672', t => t.is (m('MSKU6011672'), true ))
 
-test('work for container numbers with spaces', t => t.is (m('MS  KU   601 1672'), true ))
-
 test('work for container numbers with lowercase letters', t => t.is (m('msku6011672'), true ))
+
+test('return false for container numbers with spaces', t => t.is (m('MS  KU   601 1672'), false ))
 
 test('return false if position of letters and numbers are switched', t => t.is (m('6011672msku'), false ))
 
