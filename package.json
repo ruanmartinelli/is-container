@@ -14,7 +14,11 @@
     "container",
     "number",
     "valid",
-    "check"
+    "check",
+    "iso6346",
+    "iso",
+    "6346",
+    "cargo"
   ],
   "author": {
     "name": "Ruan Martinelli",
