@@ -1,18 +1,25 @@
-const m = require('./')
-const test = require('ava')
+import m from './'
+import test from 'ava'
 
-test('work for MSKU6011672', t => t.is (m('MSKU6011672'), true ))
+const cases = {
+  MSKU6011672: true,
+  msku6011672: true,
+  '6011672msku': false,
+  INXU6011677: false,
+  '00000000000': false,
+  '': false,
+  'MS  KU   601 1672': false
+};
 
-test('work for container numbers with lowercase letters', t => t.is (m('msku6011672'), true ))
+for (let c of Object.keys(cases)) {
+  test(`case '${c}' shold return ${cases[c]}`, t => {
+    const result = m(c);
+    const expected = cases[c];
 
-test('return false for container numbers with spaces', t => t.is (m('MS  KU   601 1672'), false ))
+    t.is(result, expected);
+  });
+}
 
-test('return false if position of letters and numbers are switched', t => t.is (m('6011672msku'), false ))
-
-test('return false for invalid container numbers (INXU6011677)', t => t.is (m('INXU6011677'), false ))
-
-test('return false if everything is zero', t => t.is (m('00000000000'), false ))
-
-test('return false for empty strings', t => t.is (m(''), false ))
-
-test('return false if no container number is given', t => t.is (m(), false ))
+test('should return false if no container number is given', t => {
+  t.false(m());
+});
