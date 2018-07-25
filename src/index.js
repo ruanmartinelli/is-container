@@ -1,4 +1,4 @@
-module.exports = code => {
+export default function isContainer(code) {
   if (!code) return false;
 
   // prettier-ignore
