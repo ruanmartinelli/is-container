@@ -12,7 +12,7 @@ const cases = {
 };
 
 for (let c of Object.keys(cases)) {
-  test(`case '${c}' shold return ${cases[c]}`, t => {
+  test(`case '${c}' should return ${cases[c]}`, t => {
     const result = m(c);
     const expected = cases[c];
 

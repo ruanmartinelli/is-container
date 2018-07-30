@@ -2,9 +2,11 @@
   "name": "is-container",
   "version": "1.1.0",
   "description": "Validates a container number according to ISO 6346",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "ava test.js --verbose"
+    "test": "ava test.js --verbose",
+    "build": "babel --no-babelrc src/ --out-dir dist/ --plugins transform-es2015-modules-umd",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,8 @@
   },
   "homepage": "https://github.com/ruanmartinelli/is-container#readme",
   "devDependencies": {
-    "ava": "^0.17.0"
+    "ava": "^0.17.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1"
   }
 }
