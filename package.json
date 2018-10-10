@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/ruanmartinelli/is-container#readme",
   "devDependencies": {
-    "ava": "^0.17.0",
+    "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1"
   }
