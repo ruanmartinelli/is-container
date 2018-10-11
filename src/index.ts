@@ -1,8 +1,14 @@
-module.exports = function isContainer(code) {
+export default function isContainer(code: string): boolean {
   if (!code) return false
 
+  if (typeof code !== 'string') {
+    throw new TypeError(
+      `Expected code to be of type 'string', received: '${typeof code}'`,
+    )
+  }
+
   // prettier-ignore
-  const alphabet = {
+  const alphabet: { [letter: string]: number } = {
     'A': 10, 'B': 12, 'C': 13, 'D': 14, 'E': 15, 'F': 16, 'G': 17, 'H': 18, 'I': 19,
     'J': 20, 'K': 21, 'L': 23, 'M': 24, 'N': 25, 'O': 26, 'P': 27, 'Q': 28, 'R': 29,
     'S': 30, 'T': 31, 'U': 32, 'V': 34, 'W': 35, 'X': 36, 'Y': 37, 'Z': 38
@@ -12,18 +18,18 @@ module.exports = function isContainer(code) {
 
   const undef = !code
   const empty = code === ''
-  const invalid_len = code.length !== 11
-  const is_iso_format = /^[A-Z]{4}\d{7}/.test(code)
+  const invalidLenght = code.length !== 11
+  const isISOFormat = /^[A-Z]{4}\d{7}/.test(code)
 
-  if (undef || empty || invalid_len || !is_iso_format) return false
+  if (undef || empty || invalidLenght || !isISOFormat) return false
 
   let sum = 0
-  const check_digit = code.substr(10)
+  const checkDigit = code.substr(10)
 
   code
     .substr(0, 10)
     .split('')
-    .map((char, index) => {
+    .map((char: string, index: number) => {
       let n = Number(char)
 
       if (index < 4) n = alphabet[char]
@@ -36,5 +42,5 @@ module.exports = function isContainer(code) {
   sum %= 11
   sum %= 10
 
-  return sum === Number(check_digit)
+  return sum === Number(checkDigit)
 }

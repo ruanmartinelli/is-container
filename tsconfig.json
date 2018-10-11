@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "outDir": "dist/",
+    "module": "umd",
+    "pretty": true,
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
+}
+
