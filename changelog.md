@@ -14,4 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Throws `TypeError` when passing non-string values
+- Returns `false` for non-string types

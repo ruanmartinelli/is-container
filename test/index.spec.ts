@@ -8,17 +8,14 @@ describe('Test cases', () => {
     ${'6011672msku'}    | ${false}
     ${'INXU6011677'}    | ${false}
     ${'00000000000'}    | ${false}
-    ${''}               | ${false}
     ${'MS KU 601 1672'} | ${false}
+    ${''}               | ${false}
     ${null}             | ${false}
     ${undefined}        | ${false}
+    ${true}             | ${false}
+    ${12345678900}      | ${false}
+    ${/^[A-Z]/}         | ${false}
   `('returns $expected for $container', ({ container, expected }) => {
     expect(m(container)).toBe(expected)
-  })
-
-  test('throw TypeError for non-string values', () => {
-    expect(() => m(true as any)).toThrow(TypeError)
-    expect(() => m(/^[A-Z]/ as any)).toThrow(TypeError)
-    expect(() => m(12345678900 as any)).toThrow(TypeError)
   })
 })

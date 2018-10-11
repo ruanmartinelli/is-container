@@ -1,11 +1,7 @@
 export default function isContainer(code: string): boolean {
   if (!code) return false
 
-  if (typeof code !== 'string') {
-    throw new TypeError(
-      `Expected code to be of type 'string', received: '${typeof code}'`,
-    )
-  }
+  if (typeof code !== 'string') return false
 
   // prettier-ignore
   const alphabet: { [letter: string]: number } = {
@@ -16,12 +12,10 @@ export default function isContainer(code: string): boolean {
 
   code = code.toUpperCase()
 
-  const undef = !code
-  const empty = code === ''
   const invalidLenght = code.length !== 11
   const isISOFormat = /^[A-Z]{4}\d{7}/.test(code)
 
-  if (undef || empty || invalidLenght || !isISOFormat) return false
+  if (invalidLenght || !isISOFormat) return false
 
   let sum = 0
   const checkDigit = code.substr(10)
