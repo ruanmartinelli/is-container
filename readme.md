@@ -20,7 +20,7 @@ $ npm install --save is-container
 
 ## Usage
 
-See [test.js](https://github.com/ruanmartinelli/is-container/blob/master/test.js) for more examples.
+See [tests](/test/index.spec.ts) for more examples.
 
 ```js
 const isContainer = require('is-container')
