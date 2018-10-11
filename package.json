@@ -3,14 +3,65 @@
   "version": "1.1.3",
   "description": "Validates a container number according to ISO 6346",
   "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "homepage": "https://github.com/ruanmartinelli/is-container#readme",
+  "author": {
+    "name": "Ruan Martinelli",
+    "email": "martinelliruan@gmail.com",
+    "url": "https://ruanmartinelli.com"
+  },
   "scripts": {
-    "test": "ava test.js --verbose",
-    "build": "babel --no-babelrc src/ --out-dir dist/ --plugins transform-es2015-modules-umd --presets es2015",
-    "prepublish": "npm run build"
+    "prepublishOnly": "make prepublish",
+    "test": "make test",
+    "lint": "make lint",
+    "coverage": "make coverage",
+    "precommit": "make lint && git add ."
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.5",
+    "@types/node": "^10.11.6",
+    "codecov": "^3.1.0",
+    "del-cli": "^1.1.0",
+    "husky": "^1.1.1",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.1.2"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ruanmartinelli/is-container.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ruanmartinelli/is-container/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": ".*\\.spec\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "json",
+      "js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    }
   },
   "keywords": [
     "container",
@@ -21,20 +72,5 @@
     "iso",
     "6346",
     "cargo"
-  ],
-  "author": {
-    "name": "Ruan Martinelli",
-    "email": "martinelliruan@gmail.com",
-    "url": "ruanmartinelli.com"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ruanmartinelli/is-container/issues"
-  },
-  "homepage": "https://github.com/ruanmartinelli/is-container#readme",
-  "devDependencies": {
-    "ava": "^0.17.0",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-es2015-modules-umd": "^6.24.1"
-  }
+  ]
 }
