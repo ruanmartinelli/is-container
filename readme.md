@@ -33,7 +33,7 @@ isContainer('MSKU6011672')
 
 ### isContainer(code)
 
-#### input
+#### code
 
 Type: `string`
 
