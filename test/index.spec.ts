@@ -1,6 +1,7 @@
 import m from '../src'
+import fc from 'fast-check'
 
-describe('Test cases', () => {
+describe('Unit', () => {
   test.each`
     container           | expected
     ${'MSKU6011672'}    | ${true}
@@ -17,5 +18,21 @@ describe('Test cases', () => {
     ${/^[A-Z]/}         | ${false}
   `('returns $expected for $container', ({ container, expected }) => {
     expect(m(container)).toBe(expected)
+  })
+})
+
+describe('Property', () => {
+  it('returns false for fuzzy inputs', () => {
+    const arbitraries = fc.oneof(
+      fc.string(),
+      fc.unicodeString(),
+      fc.asciiString(),
+    )
+
+    const property = fc.property(arbitraries, input => {
+      return m(input) === false
+    })
+
+    fc.assert(property, { numRuns: 500, verbose: true })
   })
 })

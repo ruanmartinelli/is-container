@@ -23,6 +23,7 @@
     "@types/node": "^10.11.6",
     "codecov": "^3.1.0",
     "del-cli": "^1.1.0",
+    "fast-check": "^1.7.1",
     "husky": "^1.1.1",
     "jest": "^23.6.0",
     "prettier": "^1.14.3",
