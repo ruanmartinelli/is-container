@@ -1,5 +1,5 @@
 clean:
-	yarn del dist coverage
+	rm -rf dist coverage
 
 build: clean
 	yarn tsc
