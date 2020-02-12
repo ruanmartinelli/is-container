@@ -23,7 +23,7 @@
     "@types/node": "^13.5.2",
     "codecov": "^3.1.0",
     "fast-check": "^1.16.0",
-    "husky": "4.2.1",
+    "husky": "4.2.2",
     "jest": "^24.8.0",
     "prettier": "^1.14.3",
     "ts-jest": "^24.0.2",
