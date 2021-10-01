@@ -19,7 +19,7 @@
     "precommit": "make lint && git add ."
   },
   "devDependencies": {
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^27.0.2",
     "@types/node": "^14.0.1",
     "codecov": "^3.1.0",
     "fast-check": "^2.0.0",
